@@ -1,11 +1,10 @@
-# coding: utf-8
-from .api import *
-from .httrader import HTTrader
-from .webtrader import WebTrader
-from .yhtrader import YHTrader
-from .yjbtrader import YJBTrader
-from .gftrader import GFTrader
-from .joinquant_follower import JoinQuantFollower
+# -*- coding: utf-8 -*-
+import urllib3
 
-__version__ = '0.9.0'
-__author__ = 'shidenggui'
+from . import exceptions
+from .api import use, follower
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+__version__ = "0.18.4"
+__author__ = "shidenggui"
